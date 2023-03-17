@@ -1,22 +1,26 @@
 import React from "react";
-import logo from "./logo.svg";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Schedule from "./routes/Schedule";
+import Events from "./routes/Events";
+import Contact from "./routes/Contact";
+import Login from "./routes/Login";
+//import logo from "./logo.svg";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 
