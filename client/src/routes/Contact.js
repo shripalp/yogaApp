@@ -1,11 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Form from "../components/Form";
 
 function Contact() {
   return (
     <>
       <Header />
-      <h1 style={{ textAlign: "center", paddingTop: "15%" }}>Contact</h1>
+      <Form />
+      <Footer />
     </>
   );
 }

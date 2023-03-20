@@ -9,8 +9,9 @@ function Footer() {
   }, []);
   return (
     <footer>
-      <div className="container-fluid">
+      <div className="container-fluid bg-info m-3 p-3">
         <div className="row">
+          <p>This is Footer</p>
           <p>{!data ? "...loading" : data}</p>
         </div>
       </div>

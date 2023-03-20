@@ -1,48 +1,67 @@
 import React from "react";
-import logo from "./assets/logo.svg";
+import logo from "./assets/lotus.jpg";
+import { NavLink } from "react-router-dom";
+import "../scss/custom.scss";
 function Header() {
   return (
     <header>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-sm-4">
-            <img src={logo} className="App-logo" alt="logo" />
-          </div>
-          <div className="col-sm-8">
-            <ul className="nav justify-content-center">
-              <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href="/about"
-                >
-                  Active
-                </a>
+      <nav className="navbar navbar-expand-lg bg-primary m-3 p-3">
+        <div className="container-fluid">
+          <a className="navbar-brand float-start" href="/">
+            <img
+              src={logo}
+              className="rounded-circle"
+              alt="logo"
+              height="150"
+            />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse float-end" id="navbarNav">
+            <ul className="navbar-nav fs-3">
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/">
+                  Home
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">
-                  Link
-                </a>
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/about">
+                  About
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/events">
-                  Link
-                </a>
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/contact">
+                  Contact
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link disabled"
-                  href="/schedule"
-                  tabindex="-1"
-                  aria-disabled="true"
-                >
-                  Disabled
-                </a>
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/events">
+                  Events
+                </NavLink>
+              </li>
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/schedule">
+                  Schedule
+                </NavLink>
+              </li>
+              <li className="nav-item p-3">
+                <NavLink className="text-white" to="/login">
+                  Login
+                </NavLink>
               </li>
             </ul>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

@@ -1,14 +1,16 @@
-import React from "react"
-import Header from "../components/Header"
+import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Table from "../components/Table";
 
 function Schedule() {
-    return (
-        <>
-        <Header />
-        <h1 style={{textAlign: "center", paddingTop: "15%"}}>Schedule</h1>
-        </>
-        
-    )
+  return (
+    <>
+      <Header />
+      <Table />
+      <Footer />
+    </>
+  );
 }
 
-export default Schedule
+export default Schedule;
