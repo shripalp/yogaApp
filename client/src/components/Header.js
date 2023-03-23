@@ -6,8 +6,8 @@ function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-primary m-3 p-3">
-        <div className="container-fluid">
-          <a className="navbar-brand float-start" href="/">
+        <div className="container-fluid" id="header">
+          <a className="navbar-brand float-start w-25" href="/">
             <img
               src={logo}
               className="rounded-circle"
@@ -26,35 +26,35 @@ function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse float-end" id="navbarNav">
-            <ul className="navbar-nav fs-3">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/">
+                <NavLink className="navLinks" to="/">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/about">
+                <NavLink className="navLinks" to="/about">
                   About
                 </NavLink>
               </li>
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/contact">
+                <NavLink className="navLinks" to="/contact">
                   Contact
                 </NavLink>
               </li>
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/events">
+                <NavLink className="navLinks" to="/events">
                   Events
                 </NavLink>
               </li>
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/schedule">
+                <NavLink className="navLinks" to="/schedule">
                   Schedule
                 </NavLink>
               </li>
               <li className="nav-item p-3">
-                <NavLink className="text-white" to="/login">
+                <NavLink className="navLinks" to="/login">
                   Login
                 </NavLink>
               </li>

@@ -12,3 +12,24 @@ $theme-colors: (
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+.photo {
+  width: 50%;
+}
+.navLinks {
+  text-decoration: none;
+  color: white;
+}
+.navLinks:hover {
+  font-size: 120%;
+  color: white;
+}
+
+#header {
+  border-style: solid;
+}
+
+#navbarNav {
+  border-style: solid;
+  justify-content: right;
+  font-size: x-large;
+}

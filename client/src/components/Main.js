@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./assets/lotus.jpg";
 
+import "../scss/custom.scss";
 function Main() {
   return (
     <main>
       <div className="container-fluid">
         <div className="row m-3 p-3">
-          <div className="col-lg-12">
+          <div className="col">
             <div
               id="carouselExampleControls"
               class="carousel slide"
@@ -14,13 +14,25 @@ function Main() {
             >
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src={logo} class="d-block w-100" alt="..." />
+                  <img
+                    src={require("./assets/primary_series.jpg")}
+                    class="d-block mx-auto w-50"
+                    alt="..."
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src={logo} class="d-block w-100" alt="logo" />
+                  <img
+                    src={require("./assets/ashtanga-yoga.jpg")}
+                    class="d-block mx-auto w-75"
+                    alt="logo"
+                  />
                 </div>
                 <div class="carousel-item">
-                  <img src={logo} class="d-block w-100" alt="..." />
+                  <img
+                    src={require("./assets/ashtanga-yoga.jpg")}
+                    class="d-block mx-auto w-75"
+                    alt="..."
+                  />
                 </div>
               </div>
               <button
@@ -52,8 +64,12 @@ function Main() {
         </div>
         <div className="row m-3 p-3">
           <div className="col-lg-6">
-            <div class="card w-100">
-              <img src={logo} class="card-img-top" alt="..." />
+            <div class="card w-75 d-block mx-auto">
+              <img
+                src={require("./assets/ashtanga-yoga.jpg")}
+                class="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
@@ -67,8 +83,12 @@ function Main() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="card w-100">
-              <img src={logo} className="card-img-top" alt="..." />
+            <div className="card w-75 d-block mx-auto">
+              <img
+                src={require("./assets/ashtanga-yoga.jpg")}
+                className="card-img-top"
+                alt="..."
+              />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">
