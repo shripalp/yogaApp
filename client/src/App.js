@@ -5,8 +5,7 @@ import Schedule from "./routes/Schedule";
 import Events from "./routes/Events";
 import Contact from "./routes/Contact";
 import Login from "./routes/Login";
-//import logo from "./logo.svg";
-import "./App.css";
+
 import { Route, Routes } from "react-router-dom";
 
 function App() {

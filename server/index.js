@@ -1,25 +1,49 @@
 // server/index.js
+const http = require("http");
+const app = require("./app");
 
-const express = require("express");
-const path = require("path");
+const normalizePort = (val) => {
+  const port = parseInt(val, 10);
 
-const PORT = process.env.PORT || 3001;
+  if (isNaN(port)) {
+    return val;
+  }
+  if (port >= 0) {
+    return port;
+  }
+  return false;
+};
+const port = normalizePort(process.env.PORT || "3001");
+app.set("port", port);
 
-const app = express();
+const errorHandler = (error) => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+  const address = server.address();
+  const bind =
+    typeof address === "string" ? "pipe " + address : "port: " + port;
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges.");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use.");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+const server = http.createServer(app);
 
-// Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from shripal's server!" });
+server.on("error", errorHandler);
+server.on("listening", () => {
+  const address = server.address();
+  const bind = typeof address === "string" ? "pipe " + address : "port " + port;
+  console.log("Listening on " + bind);
 });
 
-// All other GET requests not handled before will return our React app
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
-
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+server.listen(port);

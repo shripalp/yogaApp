@@ -1,0 +1,23 @@
+@import "custom";
+
+.photo {
+  width: 50%;
+}
+.navLinks {
+  text-decoration: none;
+  color: white;
+}
+.navLinks:hover {
+  font-size: 150%;
+  color: white;
+}
+
+#header {
+  border-style: solid;
+}
+
+#navbarNav {
+  border-style: solid;
+  justify-content: right;
+  font-size: x-large;
+}
