@@ -2,11 +2,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
-
+//import Cookies from "universal-cookie";
 import logo from "./assets/lotus.jpg";
 import "../scss/App.scss";
 
-function Header() {
+function Header(props) {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -31,7 +31,9 @@ function Header() {
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/events">Events</Nav.Link>
             <Nav.Link href="/schedule">Schedule</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/login">
+              {props.token ? "Welcomen Shripal!" : "Login"}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -2,12 +2,13 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-//import Cookies from "universal-cookie";
+import Cookies from "universal-cookie";
 
 function LoginForm() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [login, setLogin] = React.useState(false);
+  const cookies = new Cookies();
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -24,6 +25,13 @@ function LoginForm() {
     axios(configuration)
       .then((result) => {
         setLogin(true);
+        // set the cookie
+        cookies.set("TOKEN", result.data.token, {
+          path: "/",
+        });
+        // redirect user to the auth page
+        window.location.href = "/";
+
         setEmail("");
         setPassword("");
       })
