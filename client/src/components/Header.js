@@ -1,68 +1,41 @@
-import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import Image from "react-bootstrap/Image";
+
 import logo from "./assets/lotus.jpg";
-import { NavLink } from "react-router-dom";
 import "../scss/App.scss";
+
 function Header() {
   return (
-    <header>
-      <nav className="navbar navbar-expand-lg bg-primary m-3 p-3">
-        <div className="container-fluid" id="header">
-          <a className="navbar-brand float-start w-25" href="/">
-            <img
-              src={logo}
-              className="rounded-circle"
-              alt="logo"
-              height="150"
-            />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/about">
-                  About
-                </NavLink>
-              </li>
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/contact">
-                  Contact
-                </NavLink>
-              </li>
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/events">
-                  Events
-                </NavLink>
-              </li>
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/schedule">
-                  Schedule
-                </NavLink>
-              </li>
-              <li className="nav-item p-3">
-                <NavLink className="navLinks" to="/login">
-                  Login
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="/">
+          <Image
+            src={logo}
+            className="d-inline-block align-top"
+            roundedCircle
+            fluid
+            width="100"
+            alt="logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          className="justify-content-end"
+        >
+          <Nav>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+            <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link href="/schedule">Schedule</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
-import Header from "../components/Header2";
-import Footer from "../components/Footer";
-import Table from "../components/Table";
+
+import ScheduleTable from "../components/Table";
 import { Container, Col, Row } from "react-bootstrap";
 
 function Schedule() {
@@ -9,17 +8,7 @@ function Schedule() {
     <Container fluid>
       <Row>
         <Col>
-          <Header />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Table />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Footer />
+          <ScheduleTable />
         </Col>
       </Row>
     </Container>

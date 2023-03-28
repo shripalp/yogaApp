@@ -23,16 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-// Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from shripal's server!" });
-});
-
-// All other GET requests not handled before will return our React app
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
-
 app.post("/register", (request, response) => {
   bcrypt
     .hash(request.body.password, 10)
@@ -144,14 +134,23 @@ app.post("/login", (request, response) => {
     });
 });
 
-// free endpoint
-app.get("/free-endpoint", auth, (request, response) => {
-  response.json({ message: "You are free to access me anytime" });
+// Handle GET requests to /api route
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from shripal's server!" });
+});
+app.get("/api/free-endpoint", (req, res) => {
+  res.json({ message: "You are free to access me anytime" });
 });
 
 // authentication endpoint
-app.get("/auth-endpoint", auth, (request, response) => {
-  response.json({ message: "You are authorized to access me" });
+app.get("/api/auth-endpoint", auth, (req, res) => {
+  res.json({ message: "You are authorized to access me" });
 });
+// All other GET requests not handled before will return our React app
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
+
+// free endpoint
 
 module.exports = app;

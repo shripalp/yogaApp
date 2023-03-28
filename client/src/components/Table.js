@@ -1,40 +1,37 @@
-import React from "react";
+import Table from "react-bootstrap/Table";
 
-function Table() {
+function ScheduleTable() {
   return (
-    <div className="container-fluid">
-      <div container="row">
-        <div container="col">
-          <table class="table table-striped">
-            <thead>
-              <td>#</td>
-              <td>class</td>
-              <td>time</td>
-            </thead>
-            <tbody>
-              <tr class="table-active">
-                <td>1</td>
-                <td>yoga</td>
-                <td>5pm</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>yoga</td>
-                <td>6pm</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2" class="table-active">
-                  Larry the Bird
-                </td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <Table striped bordered hover variant="light">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colSpan={2}>Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </Table>
   );
 }
 
-export default Table;
+export default ScheduleTable;

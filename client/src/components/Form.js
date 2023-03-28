@@ -1,34 +1,33 @@
-function Form() {
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+function ContactForm() {
   return (
-    <div className="container-fluid">
-      <div class="row g-3">
-        <div class="col-md-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="First name"
-            aria-label="First name"
-          />
-        </div>
-        <div class="col-md-4">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Last name"
-            aria-label="Last name"
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-4 m-1">
-          <label for="formFile" className="form-label">
-            Default file input example
-          </label>
-          <input className="form-control" type="file" id="formFile" />
-        </div>
-      </div>
-    </div>
+    <Form>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter Name" />
+        <Form.Text className="text-muted">
+          We'll never share your name with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 }
 
-export default Form;
+export default ContactForm;

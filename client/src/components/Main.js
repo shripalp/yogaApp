@@ -1,109 +1,64 @@
 import React from "react";
-
 import "../scss/App.scss";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Carousel from "react-bootstrap/Carousel";
+
 function Main() {
   return (
-    <main>
-      <div className="container-fluid">
-        <div className="row m-3 p-3">
-          <div className="col">
-            <div
-              id="carouselExampleControls"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src={require("./assets/primary_series.jpg")}
-                    class="d-block mx-auto w-50"
-                    alt="..."
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src={require("./assets/ashtanga-yoga.jpg")}
-                    class="d-block mx-auto w-75"
-                    alt="logo"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src={require("./assets/ashtanga-yoga.jpg")}
-                    class="d-block mx-auto w-75"
-                    alt="..."
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="row m-3 p-3">
-          <div className="col-lg-6">
-            <div class="card w-75 d-block mx-auto">
+    <Container>
+      <Row>
+        <Col>
+          <Carousel>
+            <Carousel.Item>
               <img
-                src={require("./assets/ashtanga-yoga.jpg")}
-                class="card-img-top"
-                alt="..."
+                className="d-block w-100"
+                src={require("./assets/primary_series.jpg")}
+                alt="First slide"
               />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+              <Carousel.Caption>
+                <h3>First slide label</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
                 </p>
-                <a href="/" className="btn btn-primary">
-                  Go somewhere
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="card w-75 d-block mx-auto">
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
               <img
-                src={require("./assets/ashtanga-yoga.jpg")}
-                className="card-img-top"
-                alt="..."
+                className="d-block w-100"
+                src={require("./assets/primary_series.jpg")}
+                alt="Second slide"
               />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+
+              <Carousel.Caption>
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={require("./assets/primary_series.jpg")}
+                alt="Third slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
                 </p>
-                <a href="/" class="btn btn-primary">
-                  Go somewhere
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+      </Row>
+      <Row>
+        <Col>Card</Col>
+        <Col>Card</Col>
+      </Row>
+    </Container>
   );
 }
 
