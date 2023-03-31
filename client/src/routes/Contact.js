@@ -12,8 +12,8 @@ function Contact(props) {
           <Header token={props.token} />
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="m-5">
+        <Col xs={12} sm={12} md={6} lg={4}>
           <ContactForm />
         </Col>
       </Row>

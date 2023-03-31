@@ -15,9 +15,9 @@ function App() {
   const cookies = new Cookies();
 
   let token = cookies.get("TOKEN");
-  if (token === "null") {
-    token = null;
-  }
+  // if (token === "null") {
+  //   token = null;
+  // }
   console.log("token form APP.js", token);
 
   return (

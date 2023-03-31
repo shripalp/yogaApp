@@ -2,6 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+//import axios from "axios";
 import "../scss/App.scss";
 
 function Footer() {
@@ -10,7 +11,10 @@ function Footer() {
   React.useEffect(() => {
     fetch("/api/free-endpoint")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => {
+        console.log(data);
+        setData(data.message);
+      });
   }, []);
   return (
     <footer>
