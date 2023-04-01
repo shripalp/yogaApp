@@ -54,6 +54,11 @@ app.post("/register", (request, response) => {
     });
 });
 
+app.get("/api/classes", async (req, res) => {
+  const classes = await Classes.find({});
+  res.json(classes);
+});
+
 app.post("/api/classes", (request, response) => {
   const classes = new Classes({
     classname: request.body.classname,
