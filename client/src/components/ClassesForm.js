@@ -1,31 +1,33 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
+import classService from "../services/classService";
 
 function ClassesForm() {
   const [classname, setClassname] = React.useState("");
   const [teacher, setTeacher] = React.useState("");
   const [location, setLocation] = React.useState("");
   const [time, setTime] = React.useState("");
+  const [selectedFile, setSelectedFile] = React.useState();
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
-    const configuration = {
-      method: "post",
-      url: "/api/classes",
-      data: {
-        classname,
-        teacher,
-        location,
-        time,
-      },
+    const formData = new FormData();
+    formData.append("File", selectedFile);
+    console.log("formdata", formData);
+    const classObject = {
+      classname: classname,
+      teacher: teacher,
+      location: location,
+      time: time,
+      file: formData,
     };
-    console.log(configuration);
-    axios(configuration)
+    classService
+      .create(classObject)
       .then((result) => {
+        console.log("Success", result);
         setLocation("");
         setClassname("");
         setTeacher("");
@@ -34,7 +36,12 @@ function ClassesForm() {
       .catch((error) => {
         error = new Error();
       });
+    console.log("file selected");
   };
+  const changeHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
   return (
     <>
       <h2>Enter yoga classes</h2>
@@ -79,6 +86,10 @@ function ClassesForm() {
             onChange={(e) => setTime(e.target.value)}
             placeholder="Enter time"
           />
+        </Form.Group>
+        <Form.Group controlId="formFile" className="mb-3">
+          <Form.Label>Default file input example</Form.Label>
+          <Form.Control type="file" name="file" onChange={changeHandler} />
         </Form.Group>
 
         <Button

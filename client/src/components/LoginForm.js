@@ -25,10 +25,16 @@ function LoginForm() {
     axios(configuration)
       .then((result) => {
         setLogin(true);
+        
         // set the cookie
         cookies.set("TOKEN", result.data.token, {
           path: "/",
         });
+
+        window.localStorage.setItem(
+          "loggedUser",
+          JSON.stringify(result.data.email)
+        );
         // redirect user to the auth page
         window.location.href = "/";
 

@@ -22,7 +22,7 @@ function Schedule(props) {
       </Row>
       <Row>
         <Col>
-          <ScheduleTable />
+          <ScheduleTable token={props.token} />
         </Col>
       </Row>
       <Row>

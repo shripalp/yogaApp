@@ -7,6 +7,9 @@ import logo from "./assets/lotus.jpg";
 import "../scss/App.scss";
 
 function Header(props) {
+  const user = JSON.parse(window.localStorage.getItem("loggedUser"));
+  console.log(user);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -32,7 +35,7 @@ function Header(props) {
             <Nav.Link href="/events">Events</Nav.Link>
             <Nav.Link href="/schedule">Schedule</Nav.Link>
             <Nav.Link href="/login">
-              {props.token ? "Welcomen Shripal!" : "Login"}
+              {props.token ? <>{user}</> : "Login"}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

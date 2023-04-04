@@ -3,7 +3,7 @@ import React from "react";
 import classService from "../services/classService";
 import YogaClass from "./YogaClass";
 
-function ScheduleTable() {
+function ScheduleTable(props) {
   const [classnames, setClassnames] = React.useState([]);
 
   React.useEffect(() => {
@@ -12,6 +12,7 @@ function ScheduleTable() {
       //console.log(classnames);
     });
   }, [classnames]);
+
   return (
     <Table striped bordered hover variant="light">
       <thead>
@@ -23,8 +24,12 @@ function ScheduleTable() {
         </tr>
       </thead>
       <tbody>
-        {classnames.map((c) => (
-          <YogaClass key={c._id} yoga={c} />
+        {classnames.map((yogaclass) => (
+          <YogaClass
+            key={yogaclass._id}
+            yogaclass={yogaclass}
+            token={props.token}
+          />
         ))}
       </tbody>
     </Table>
