@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import FileUpload from "../components/Fileupload";
 import { Container, Col, Row } from "react-bootstrap";
+//import EventsList from "../components/EventsList";
 
 function Events(props) {
   return (
@@ -13,7 +14,10 @@ function Events(props) {
         </Col>
       </Row>
       <Row>
-        <Col>Events</Col>
+        <Col>{props.token ? <FileUpload /> : null}</Col>
+      </Row>
+      <Row>
+        <Col></Col>
       </Row>
       <Row>
         <Col>

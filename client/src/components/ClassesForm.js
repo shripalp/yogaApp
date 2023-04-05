@@ -8,21 +8,17 @@ function ClassesForm() {
   const [teacher, setTeacher] = React.useState("");
   const [location, setLocation] = React.useState("");
   const [time, setTime] = React.useState("");
-  const [selectedFile, setSelectedFile] = React.useState();
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
-    const formData = new FormData();
-    formData.append("File", selectedFile);
-    console.log("formdata", formData);
+
     const classObject = {
       classname: classname,
       teacher: teacher,
       location: location,
       time: time,
-      file: formData,
     };
     classService
       .create(classObject)
@@ -36,10 +32,6 @@ function ClassesForm() {
       .catch((error) => {
         error = new Error();
       });
-    console.log("file selected");
-  };
-  const changeHandler = (event) => {
-    setSelectedFile(event.target.files[0]);
   };
 
   return (
@@ -86,10 +78,6 @@ function ClassesForm() {
             onChange={(e) => setTime(e.target.value)}
             placeholder="Enter time"
           />
-        </Form.Group>
-        <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Default file input example</Form.Label>
-          <Form.Control type="file" name="file" onChange={changeHandler} />
         </Form.Group>
 
         <Button
