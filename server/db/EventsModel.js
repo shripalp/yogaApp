@@ -6,11 +6,6 @@ const EventsSchema = new mongoose.Schema({
     required: [true, "Please provide eventname"],
     unique: false,
   },
-  filename: {
-    type: String,
-    required: false,
-    unique: false,
-  },
 });
 
 //create a user table or collection if there is no table with that name already

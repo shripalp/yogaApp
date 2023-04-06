@@ -30,6 +30,10 @@ const remove = (id) => {
   return axios.delete(`${baseUrl}/${id}`);
 };
 
+const removeEvent = (id) => {
+  return axios.delete(`${baseUrl}/upload/${id}`);
+};
+
 const classService = {
   getAll: getAll,
   getAllEvents: getAllEvents,
@@ -37,6 +41,7 @@ const classService = {
   update: update,
   remove: remove,
   upload: upload,
+  removeEvent: removeEvent,
 };
 
 export default classService;

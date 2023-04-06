@@ -4,7 +4,8 @@ import classService from "../services/classService";
 const Event = (props) => {
   const handleRemove = (event) => {
     event.preventDefault();
-    classService.remove(props.event._id);
+
+    classService.removeEvent(props.event._id);
   };
   return (
     <tr>

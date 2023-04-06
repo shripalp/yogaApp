@@ -2,6 +2,7 @@ const classesRouter = require("express").Router();
 const Yogaclass = require("../db/classesModel");
 const Events = require("../db/EventsModel");
 const multer = require("multer");
+
 const { MongoClient } = require("mongodb");
 //const User = require("../db/userModel");
 
@@ -11,7 +12,8 @@ classesRouter.get("/", async (request, response) => {
   const yogaclasses = await Yogaclass.find({});
   response.json(yogaclasses);
 });
-classesRouter.get("/uploads", async (request, response) => {
+
+classesRouter.get("/upload", async (request, response) => {
   const events = await Events.find({});
   response.json(events);
 });
@@ -26,25 +28,19 @@ classesRouter.get("/:id", async (request, response) => {
 });
 
 classesRouter.post("/upload", upload.single("file"), async (req, res) => {
-  const client = new MongoClient(process.env.DB_URL);
+  const body = req.body;
 
-  try {
-    await client.connect();
-    const db = client.db("yogaDB");
-    const collection = db.collection("events");
+  const event = new Events({
+    eventname: body.event,
+    filename: body.file,
+  });
+  const savedEvent = await event.save();
+  res.status(201).json(savedEvent);
+});
 
-    const result = await collection.insertOne({
-      filename: req.file,
-      eventname: req.body.event,
-    });
-
-    res.send(result);
-  } catch (error) {
-    console.error(error);
-    res.sendStatus(500);
-  } finally {
-    await client.close();
-  }
+classesRouter.delete("/upload/:id", async (request, response) => {
+  await Events.findByIdAndRemove(request.params.id);
+  response.status(204).end();
 });
 
 classesRouter.post("/", async (request, response) => {
