@@ -6,10 +6,10 @@ const path = require("path");
 const auth = require("./auth");
 // require database connection
 const dbConnect = require("./db/dbConnect");
-const User = require("./db/userModel");
-const Classes = require("./db/classesModel");
+
 const classesRouter = require("./controllers/classes");
 const usersRouter = require("./controllers/users");
+const eventsRouter = require("./controllers/events");
 
 // execute database connection
 dbConnect();
@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use("/api/classes", classesRouter);
+app.use("/api/events", eventsRouter);
 app.use("/", usersRouter);
 
 // Handle GET requests to /api route

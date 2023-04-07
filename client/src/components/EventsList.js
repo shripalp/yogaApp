@@ -1,13 +1,13 @@
 import Table from "react-bootstrap/Table";
 import React from "react";
-import classService from "../services/classService";
+import eventService from "../services/eventService";
 import Event from "./Event";
 
-function ScheduleTable(props) {
+function EventsList(props) {
   const [events, setEvents] = React.useState([]);
 
   React.useEffect(() => {
-    classService.getAllEvents().then((c) => {
+    eventService.getAllEvents().then((c) => {
       setEvents(c);
       //console.log(classnames);
     });
@@ -29,4 +29,4 @@ function ScheduleTable(props) {
   );
 }
 
-export default ScheduleTable;
+export default EventsList;

@@ -6,18 +6,8 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
-const getAllEvents = () => {
-  const request = axios.get(`${baseUrl}/upload`);
-  return request.then((response) => response.data);
-};
-
 const create = async (newObject) => {
   const response = await axios.post(baseUrl, newObject);
-  return response.data;
-};
-
-const upload = async (newObject) => {
-  const response = await axios.post(`${baseUrl}/upload`, newObject);
   return response.data;
 };
 
@@ -30,18 +20,11 @@ const remove = (id) => {
   return axios.delete(`${baseUrl}/${id}`);
 };
 
-const removeEvent = (id) => {
-  return axios.delete(`${baseUrl}/upload/${id}`);
-};
-
 const classService = {
   getAll: getAll,
-  getAllEvents: getAllEvents,
   create: create,
   update: update,
   remove: remove,
-  upload: upload,
-  removeEvent: removeEvent,
 };
 
 export default classService;

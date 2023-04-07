@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //import axios from "axios";
-import classService from "../services/classService";
+import eventService from "../services/eventService";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -19,7 +20,7 @@ function FileUpload() {
     formData.append("file", file);
     formData.append("event", eventname);
 
-    classService.upload(formData).then((response) => {
+    eventService.upload(formData).then((response) => {
       alert("file uploaded");
       setFile(null);
       setEventname("");

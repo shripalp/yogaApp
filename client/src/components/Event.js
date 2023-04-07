@@ -1,11 +1,11 @@
 import Button from "react-bootstrap/Button";
-import classService from "../services/classService";
+import eventService from "../services/eventService";
 
 const Event = (props) => {
   const handleRemove = (event) => {
     event.preventDefault();
 
-    classService.removeEvent(props.event._id);
+    eventService.removeEvent(props.event._id);
   };
   return (
     <tr>

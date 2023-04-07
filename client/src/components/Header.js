@@ -34,6 +34,7 @@ function Header(props) {
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/events">Events</Nav.Link>
             <Nav.Link href="/schedule">Schedule</Nav.Link>
+
             <Nav.Link href="/login">
               {props.token ? <>{user}</> : "Login"}
             </Nav.Link>
