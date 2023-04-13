@@ -23,11 +23,22 @@ const socials = [
 ];
 
 function Footer() {
+  const myInfo = {
+    name: "Shripal Parikh",
+    address: "Calgary, Alberta, Canada",
+    email: "shripalp@gmail.com",
+  };
   return (
     <footer>
       <Container fluid className="bg-dark my-5 p-3">
         <Row className="justify-content-lg-center">
-          <Col xs={8}>shripalp@gmail.com</Col>
+          <Col xs={8} className="navLinks">
+            {myInfo.name}
+            <br></br>
+            {myInfo.address}
+            <br></br>
+            {myInfo.email}
+          </Col>
           <Col xs={4}>
             <ul style={{ listStyle: "none" }} className="list-group p-3">
               {socials.map((item) => (

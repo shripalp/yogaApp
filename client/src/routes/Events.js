@@ -24,9 +24,9 @@ function Events(props) {
           <EventsList token={props.token} />
         </Col>
       </Row>
-      <Row className="m-5">
+      <Row className="mt-2">
         <Col>
-          <PDF file={require("../components/assets/IDY 2016.pdf")} />
+          <PDF file={require("../components/assets/SSY_Jan 24-27 2019.pdf")} />
         </Col>
       </Row>
 
