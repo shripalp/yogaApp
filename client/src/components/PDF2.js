@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import throttle from "lodash/throttle";
 import Button from "react-bootstrap/Button";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page, pdfjs } from "react-pdf/dist/esm/entry.webpack";
+
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 export default function PDF2(props) {
   const [initialWidth, setInitialWidth] = useState(null);
 
