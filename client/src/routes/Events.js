@@ -6,7 +6,7 @@ import FileUpload from "../components/Fileupload";
 //import img from "../components/assets/uploadedImage";
 import { Container, Col, Row } from "react-bootstrap";
 import EventsList from "../components/EventsList";
-import PDF from "../components/PDF";
+import PDF from "../components/PDF2";
 
 function Events(props) {
   return (
@@ -26,10 +26,7 @@ function Events(props) {
       </Row>
       <Row className="m-5">
         <Col>
-          <PDF
-            file={require("../components/assets/IDY 2016.pdf")}
-            scale="1.5"
-          />
+          <PDF file={require("../components/assets/IDY 2016.pdf")} />
         </Col>
       </Row>
 
