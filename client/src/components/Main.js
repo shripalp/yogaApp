@@ -4,7 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
+import Link from "react-bootstrap/NavLink";
 import Card from "react-bootstrap/Card";
 
 function Main() {
@@ -19,12 +20,6 @@ function Main() {
                 src={require("./assets/shripal1.jpg")}
                 alt="First slide"
               />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="item">
               <img
@@ -32,11 +27,6 @@ function Main() {
                 src={require("./assets/shripal.jpg")}
                 alt="Second slide"
               />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className="item">
               <img
@@ -44,14 +34,6 @@ function Main() {
                 src={require("./assets/primary_series.jpg")}
                 alt="Third slide"
               />
-
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
         </Col>
@@ -62,15 +44,14 @@ function Main() {
           <Card className="card" style={{ width: "20rem" }}>
             <Card.Img
               variant="top"
-              src={require("./assets/pattabhi_jois.jpg")}
+              src={require("./assets/SSY POSTER FINAL-page-001.jpg")}
             />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title>Sri Sri Yoga</Card.Title>
+              <Card.Text>Join in person SSY program</Card.Text>
+              <Link href="/contact" className="btn btn-primary">
+                Sign up
+              </Link>
             </Card.Body>
           </Card>
         </Col>
@@ -79,15 +60,15 @@ function Main() {
           <Card className="card" style={{ width: "20rem" }}>
             <Card.Img
               variant="top"
-              src={require("./assets/krishnamacharya.png")}
+              src={require("./assets/SSY POSTER FINAL-page-001.jpg")}
             />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title>Sri Sri Yoga Online</Card.Title>
+              <Card.Text>Join online SSY program</Card.Text>
+
+              <Link href="/contact" className="btn btn-primary">
+                Sign up
+              </Link>
             </Card.Body>
           </Card>
         </Col>
