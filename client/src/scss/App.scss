@@ -1,40 +1,31 @@
 @import "custom";
 
-.photo {
-  width: 50%;
-}
-.navLinks {
-  text-decoration: none;
+.nav-link {
+  font-family: "Lato", sans-serif;
   color: white;
-}
-.navLinks:hover {
-  font-size: 150%;
-  color: white;
-}
-
-#header {
-  border-style: solid;
-}
-
-#navbarNav {
-  border-style: solid;
-  justify-content: right;
-  font-size: x-large;
+  font-size: 1.5rem;
+  margin: 1rem;
 }
 
 .item {
-  height: 600px;
+  height: 500px;
 }
 .item img {
   width: 100%;
-  height: 100% !important;
-  object-fit: cover;
+  height: 80% !important;
+  object-fit: contain;
 }
 
 .card {
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .list-group {
   flex-direction: row;
   float: right;
+}
+
+.footer {
+  color: white;
 }

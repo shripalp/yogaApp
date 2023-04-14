@@ -32,7 +32,7 @@ function Footer() {
     <footer>
       <Container fluid className="bg-dark my-5 p-3">
         <Row className="justify-content-lg-center">
-          <Col xs={8} className="navLinks">
+          <Col xs={8} className="footer">
             {myInfo.name}
             <br></br>
             {myInfo.address}
