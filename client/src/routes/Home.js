@@ -15,13 +15,6 @@ function Home(props) {
 
       <Row>
         <Col>
-          {props.token ? <h1>I got token</h1> : <h1>no token</h1>}
-          <Main />
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
           <Footer />
         </Col>
       </Row>
