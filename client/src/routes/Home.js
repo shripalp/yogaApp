@@ -15,6 +15,12 @@ function Home(props) {
 
       <Row>
         <Col>
+          <Main />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
           <Footer />
         </Col>
       </Row>
