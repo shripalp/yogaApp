@@ -13,14 +13,15 @@ function Main() {
     venue:
       "North Glenmore Park Community Association, 2231 Longridge Dr. SW Calgary, Calgary, Alberta, Canada",
     fee: "Regular: CAD150.00, Student: CAD120.00, Senior: CAD120.00",
-    times: "THU, FRI: 6:00pm - 8:00pm and SAT, SUN: 10:00am - 12:30pm",
+    times:
+      "May 4-7, 2003 THU, FRI: 6:00pm - 8:00pm and SAT, SUN: 10:00am-12:30pm",
     teachers: "Shripal Parikh, Mahesh Mittal",
     contact: "Mahesh Mittal, 5879668545, mahesh.mittal@artofliving.org",
   };
 
   return (
     <Container>
-      <Row>
+      <Row className="mt-3">
         <Col>
           <Carousel>
             <Carousel.Item className="item">
@@ -47,7 +48,7 @@ function Main() {
           </Carousel>
         </Col>
       </Row>
-      <Row className="card border-0">
+      <Row className="card border-0 mt-0">
         <Col>
           {" "}
           <Card>
@@ -60,6 +61,9 @@ function Main() {
                 with yoga's poses, breath-work & insights<br></br>
                 <br></br>
                 {srisriYoga.venue}
+                <br></br>
+                <br></br>
+                {srisriYoga.time}
                 <br></br>
                 <br></br>
                 {srisriYoga.fee}

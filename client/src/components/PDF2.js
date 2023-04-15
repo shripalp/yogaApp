@@ -83,6 +83,7 @@ export default function PDF2(props) {
                   loading=""
                   width={initialWidth}
                   renderTextLayer={false}
+                  scale={props.scale}
                 />
               </Document>
             </div>

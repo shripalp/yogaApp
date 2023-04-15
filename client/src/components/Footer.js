@@ -40,7 +40,7 @@ function Footer() {
             {myInfo.email}
           </Col>
           <Col xs={4}>
-            <ul style={{ listStyle: "none" }} className="list-group p-3">
+            <ul style={{ listStyle: "none" }} className="list-group p-2">
               {socials.map((item) => (
                 <li className="p-2">
                   <a key={item.url} href={item.url}>
