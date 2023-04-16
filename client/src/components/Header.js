@@ -11,7 +11,7 @@ function Header(props) {
   console.log(user);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="/">
           <Image
@@ -23,6 +23,7 @@ function Header(props) {
             alt="logo"
           />
         </Navbar.Brand>
+        Yoga with Shripal
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           id="responsive-navbar-nav"
