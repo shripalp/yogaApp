@@ -25,7 +25,7 @@ function LoginForm() {
     axios(configuration)
       .then((result) => {
         setLogin(true);
-        
+
         // set the cookie
         cookies.set("TOKEN", result.data.token, {
           path: "/",
@@ -79,6 +79,7 @@ function LoginForm() {
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
+          className="mt-3"
         >
           Submit
         </Button>

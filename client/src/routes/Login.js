@@ -1,6 +1,6 @@
 import React from "react";
 
-import Register from "../components/Register";
+//import Register from "../components/Register";
 import LoginForm from "../components/LoginForm";
 import LogoutForm from "../components/LogoutForm";
 import { Container, Col, Row } from "react-bootstrap";
@@ -15,12 +15,14 @@ function Login(props) {
           <Header token={props.token} />
         </Col>
       </Row>
-      <Row>
-        <Col xs={12} sm={12} md={6} lg={6}>
-          {!props.token ? <Register /> : null}
-        </Col>
-
-        <Col xs={12} sm={12} md={6} lg={6}>
+      <Row className="justify-content-center">
+        <Col
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          className="d-flex justify-content-center"
+        >
           {!props.token ? <LoginForm /> : <LogoutForm />}
         </Col>
       </Row>

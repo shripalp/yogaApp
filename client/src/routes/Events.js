@@ -6,7 +6,7 @@ import FileUpload from "../components/Fileupload";
 //import img from "../components/assets/uploadedImage";
 import { Container, Col, Row } from "react-bootstrap";
 import EventsList from "../components/EventsList";
-import PDF from "../components/PDF2";
+//import PDF from "../components/PDF2";
 
 function Events(props) {
   return (
@@ -25,9 +25,7 @@ function Events(props) {
         </Col>
       </Row>
       <Row className="mt-2">
-        <Col>
-          <PDF file={require("../components/assets/SSY_Jan 24-27 2019.pdf")} />
-        </Col>
+        <Col>Under Construction</Col>
       </Row>
 
       <Row>

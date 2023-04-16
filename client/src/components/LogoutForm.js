@@ -29,11 +29,12 @@ function LogoutForm() {
           variant="primary"
           type="submit"
           onClick={(e) => handleLogout(e)}
+          className="mt-5"
         >
           Logout
         </Button>
         {/* display success message */}
-        {login ? (
+        {!login ? (
           <p className="text-success">You Are Logged in Successfully</p>
         ) : (
           <p className="text-danger">You Are Not Logged in</p>
