@@ -49,7 +49,7 @@ function Main() {
         </Col>
       </Row>
       <Row className="card border-0 mt-0">
-        <Col>
+        <Col xs={12} sm="8" md={6} lg={6}>
           {" "}
           <Card>
             <Card.Img variant="top" src={require("./assets/srisriyoga.jpg")} />
@@ -63,13 +63,13 @@ function Main() {
                 {srisriYoga.venue}
                 <br></br>
                 <br></br>
-                {srisriYoga.time}
+                {srisriYoga.times}
                 <br></br>
                 <br></br>
                 {srisriYoga.fee}
                 <br></br>
                 <br></br>
-                {srisriYoga.teachers}
+                Teachers: {srisriYoga.teachers}
                 <br></br>
                 <br></br>
                 {srisriYoga.contact}

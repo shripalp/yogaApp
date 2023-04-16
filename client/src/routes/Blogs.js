@@ -8,7 +8,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import EventsList from "../components/EventsList";
 //import PDF from "../components/PDF2";
 
-function Events(props) {
+function Blogs(props) {
   return (
     <Container fluid>
       <Row>
@@ -37,4 +37,4 @@ function Events(props) {
   );
 }
 
-export default Events;
+export default Blogs;

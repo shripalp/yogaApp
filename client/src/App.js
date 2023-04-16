@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Schedule from "./routes/Schedule";
-import Events from "./routes/Events";
+import Blogs from "./routes/Blogs";
 import Contact from "./routes/Contact";
 import Login from "./routes/Login";
 
@@ -26,7 +26,7 @@ function App() {
         <Route path="/" element={<Home token={token} />} />
         <Route path="/about" element={<About token={token} />} />
         <Route path="/schedule" element={<Schedule token={token} />} />
-        <Route path="/events" element={<Events token={token} />} />
+        <Route path="/blogs" element={<Blogs token={token} />} />
         <Route path="/contact" element={<Contact token={token} />} />
         <Route path="/login" element={<Login token={token} />} />
       </Routes>

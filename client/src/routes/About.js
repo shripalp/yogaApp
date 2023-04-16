@@ -27,11 +27,11 @@ function About(props) {
               <Image
                 className="cert"
                 src={require("../components/assets/AYC_certificate.jpg")}
-                width="500"
+                width="600"
               />
             </Col>
           </Row>
-          <Row>
+          <Row className="mt-5">
             <Col>
               <PDF file={require("../components/assets/RegistryCard.pdf")} />
             </Col>

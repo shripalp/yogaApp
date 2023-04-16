@@ -48,7 +48,9 @@ function LoginForm() {
 
   return (
     <>
-      <h2>Login</h2>
+      <br></br>
+      <br></br>
+
       <Form onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
         <Form.Group controlId="formBasicEmail">
