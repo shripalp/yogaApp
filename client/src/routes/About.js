@@ -18,7 +18,7 @@ function About(props) {
         <Col md={6}>
           <PDF
             file={require("../components/assets/SSY_certificate.pdf")}
-            scale={0.7}
+            scale={0.4}
           />
         </Col>
         <Col md={6}>
@@ -27,13 +27,16 @@ function About(props) {
               <Image
                 className="cert"
                 src={require("../components/assets/AYC_certificate.jpg")}
-                width="600"
+                width="300"
               />
             </Col>
           </Row>
           <Row className="mt-5">
             <Col>
-              <PDF file={require("../components/assets/RegistryCard.pdf")} />
+              <PDF
+                file={require("../components/assets/RegistryCard.pdf")}
+                scale={0.3}
+              />
             </Col>
           </Row>
         </Col>
