@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import PDF from "../components/PDF2";
+//import PDF from "../components/PDF2";
 //import Image from "react-bootstrap/Image";
 import CustomCard from "../components/CustomCard";
 
@@ -35,12 +35,12 @@ function About(props) {
             scale={0.3}
           />
         </Col> */}
-        <Col ld={4} md={6}>
+        {/* <Col ld={4} md={6}>
           <PDF
             scale={0.7}
             file={require("../components/assets/RegistryCard.pdf")}
           />
-        </Col>
+        </Col> */}
         {/* <Col>
           <Image
             className="ayccert"
