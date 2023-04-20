@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const EventsSchema = new mongoose.Schema({
+const Event = new mongoose.Schema({
   eventname: {
     type: String,
     required: [true, "Please provide eventname"],
@@ -11,5 +11,4 @@ const EventsSchema = new mongoose.Schema({
 
 //create a user table or collection if there is no table with that name already
 
-module.exports =
-  mongoose.model.Events || mongoose.model("Events", EventsSchema);
+module.exports = mongoose.model.Event || mongoose.model("Event", Event);

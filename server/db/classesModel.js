@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ClassesSchema = new mongoose.Schema({
+const Yogaclass = new mongoose.Schema({
   classname: {
     type: String,
     required: [true, "Please provide classname"],
@@ -23,7 +23,6 @@ const ClassesSchema = new mongoose.Schema({
   },
 });
 
-//create a user table or collection if there is no table with that name already
+//create a classes table or collection if there is no table with that name already
 
-module.exports =
-  mongoose.model.Users || mongoose.model("Classes", ClassesSchema);
+module.exports = mongoose.model.Class || mongoose.model("Class", Yogaclass);

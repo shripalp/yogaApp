@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+//import { Image } from "react-bootstrap";
+
 //import PDF from "../components/PDF2";
 //import Image from "react-bootstrap/Image";
 import CustomCard from "../components/CustomCard";
@@ -8,13 +10,15 @@ import CustomCard from "../components/CustomCard";
 import { Container, Col, Row } from "react-bootstrap";
 
 function About(props) {
+  const file = require("../components/assets/lotus.jpg");
+
   const shripalInfo = {
     title: "Shripal Parikh",
     subtitle: "Yoga Teacher, YA-200h",
     text: "Shripal is teaching yoga for past 10 years. He is trained in Iyengar style of yoga and SriSri yoga and has completed 200 hours yoga training with both.  He teaches yoga to all age groups.",
     width: 600,
     url: "/Contact",
-    img: require("../components/assets/shripal1.jpg"),
+    img: file,
     link: "Contact Shripal",
   };
 
