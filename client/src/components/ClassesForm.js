@@ -81,6 +81,7 @@ function ClassesForm() {
         </Form.Group>
 
         <Button
+          className="m-3"
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}

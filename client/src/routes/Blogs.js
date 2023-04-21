@@ -1,8 +1,10 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import BlogForm from "../components/BlogForm";
+import BlogsList from "../components/BlogList";
 //import FileUpload from "../components/Fileupload";
-import CustomCard from "../components/CustomCard";
+//import CustomCard from "../components/CustomCard";
 //import Image from "react-bootstrap/Image";
 //import img from "../components/assets/uploadedImage";
 import { Container, Col, Row } from "react-bootstrap";
@@ -17,10 +19,14 @@ function Blogs(props) {
           <Header token={props.token} />
         </Col>
       </Row>
-
-      <Row className="mt-2">
+      <Row>
+        <Col xs={12} sm={12} md={6} lg={4}>
+          {props.token ? <BlogForm /> : null}
+        </Col>
+      </Row>
+      <Row>
         <Col>
-          <CustomCard title="my blog" />
+          <BlogsList token={props.token} />
         </Col>
       </Row>
 

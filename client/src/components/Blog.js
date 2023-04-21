@@ -1,27 +1,27 @@
 import Button from "react-bootstrap/Button";
 
 import blogService from "../services/blogService";
+import CustomCard from "./CustomCard";
 
 const Blog = (props) => {
   const handleRemove = (event) => {
     event.preventDefault();
-    blogService.remove(props.yogaclass._id);
-    console.log("delete button pressed");
+    blogService.remove(props.blog._id);
   };
   return (
-    <tr>
-      <td>{props.blog.title}</td>
-      <td>{props.blog.author}</td>
-      <td>{props.blog.contnent}</td>
+    <>
+      <CustomCard
+        title={props.blog.title}
+        subtitle={props.blog.author}
+        text={props.blog.content}
+      />
 
       {props.token ? (
-        <td>
-          <Button variant="primary" type="submit" onClick={handleRemove}>
-            delete
-          </Button>
-        </td>
+        <Button variant="primary" type="submit" onClick={handleRemove}>
+          delete
+        </Button>
       ) : null}
-    </tr>
+    </>
   );
 };
 

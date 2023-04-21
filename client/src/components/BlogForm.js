@@ -16,7 +16,7 @@ function ClassesForm() {
     const blog = {
       title: title,
       author: author,
-      contnet: content,
+      content: content,
     };
     blogService
       .create(blog)
@@ -57,9 +57,10 @@ function ClassesForm() {
           />
         </Form.Group>
         <Form.Group controlId="formBasicContent">
-          <Form.Label>Location</Form.Label>
+          <Form.Label>Content</Form.Label>
           <Form.Control
-            type="textarea"
+            as="textarea"
+            rows="5"
             name="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -68,6 +69,7 @@ function ClassesForm() {
         </Form.Group>
 
         <Button
+          className="m-3"
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
