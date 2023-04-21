@@ -10,7 +10,7 @@ const dbConnect = require("./db/dbConnect");
 const classesRouter = require("./controllers/classes");
 const usersRouter = require("./controllers/users");
 const eventsRouter = require("./controllers/events");
-
+const blogsRouter = require("./controllers/blogs");
 // execute database connection
 dbConnect();
 
@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use("/api/classes", classesRouter);
+app.use("/api/blogs", blogsRouter);
 app.use("/api/events", eventsRouter);
 app.use("/", usersRouter);
 
