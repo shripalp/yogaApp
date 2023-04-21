@@ -10,7 +10,7 @@ import CustomCard from "../components/CustomCard";
 import { Container, Col, Row } from "react-bootstrap";
 
 function About(props) {
-  const file = require("../components/assets/lotus.jpg");
+  const file = require("../components/assets/shripal4.jpg");
 
   const shripalInfo = {
     title: "Shripal Parikh",

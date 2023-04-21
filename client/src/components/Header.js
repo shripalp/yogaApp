@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 //import Cookies from "universal-cookie";
-import logo from "./assets/lotus.jpg";
+import logo from "./assets/shripal.jpg";
 import "../scss/App.scss";
 
 function Header(props) {
