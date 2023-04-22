@@ -42,8 +42,8 @@ function Footer() {
           <Col xs={4}>
             <ul style={{ listStyle: "none" }} className="list-group p-2">
               {socials.map((item) => (
-                <li className="p-2">
-                  <a key={item.url} href={item.url}>
+                <li key={item.url} className="p-2">
+                  <a href={item.url}>
                     <FontAwesomeIcon
                       icon={item.icon}
                       size="2x"

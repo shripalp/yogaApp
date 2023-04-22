@@ -1,7 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
+//const bodyParser = require("body-parser");
 const path = require("path");
 const auth = require("./auth");
 // require database connection
@@ -17,8 +17,8 @@ dbConnect();
 app.use(cors());
 
 // body parser configuration
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));

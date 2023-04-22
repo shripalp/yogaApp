@@ -17,7 +17,8 @@ function ClassesForm() {
     e.preventDefault();
     // set configurations
     const result = await blogService.create(blog);
-    setBlog([...blog, result]);
+    console.log(result);
+    //setBlog([...blog, result]);
   };
 
   return (
