@@ -25,6 +25,7 @@ blogsRouter.post("/", async (request, response) => {
     title: body.title,
     author: body.author,
     content: body.content,
+    image: request.file,
   });
 
   const savedBlog = await blog.save();

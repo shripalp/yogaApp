@@ -2,11 +2,13 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import blogService from "../services/blogService";
+import FileBase64 from "react-file-base64";
 
 function ClassesForm() {
   const [title, setTitle] = React.useState("");
   const [author, setAuthor] = React.useState("");
   const [content, setContent] = React.useState("");
+  const [image, setImage] = React.useState("");
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -17,6 +19,7 @@ function ClassesForm() {
       title: title,
       author: author,
       content: content,
+      image: image,
     };
     blogService
       .create(blog)
@@ -64,6 +67,14 @@ function ClassesForm() {
             name="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            placeholder="Enter contnet"
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicImage">
+          <Form.Label>Upload Image</Form.Label>
+          <FileBase64
+            multiple={false}
+            onDone={({ base64 }) => setImage(base64)}
             placeholder="Enter contnet"
           />
         </Form.Group>
