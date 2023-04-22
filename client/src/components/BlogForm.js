@@ -2,22 +2,34 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import blogService from "../services/blogService";
+import FileBase64 from "react-file-base64";
 
 function ClassesForm() {
-  const [blog, setBlog] = React.useState({
-    title: "",
-    author: "",
-    content: "",
-    image: "",
-  });
+  const [title, setTitle] = React.useState("");
+  const [author, setAuthor] = React.useState("");
+  const [content, setContent] = React.useState("");
 
   const handleSubmit = async (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
 
-    const result = await blogService.create(blog);
-    setBlog([...blog, result]);
+    const blog = {
+      title: title,
+      author: author,
+      content: content,
+    };
+    blogService
+      .create(blog)
+      .then((result) => {
+        console.log("Success", result);
+        setTitle("");
+        setAuthor("");
+        setContent("");
+      })
+      .catch((error) => {
+        error = new Error();
+      });
   };
 
   return (
@@ -52,6 +64,14 @@ function ClassesForm() {
             name="content"
             value={content}
             onChange={(e) => setBlog({ ...blog, content: e.target.value })}
+            placeholder="Enter contnet"
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicImage">
+          <Form.Label>Upload Image</Form.Label>
+          <FileBase64
+            multiple={false}
+            onDone={({ base64 }) => setImage(base64)}
             placeholder="Enter contnet"
           />
         </Form.Group>
