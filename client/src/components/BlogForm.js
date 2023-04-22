@@ -16,6 +16,7 @@ function ClassesForm() {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
+
     const result = await blogService.create(blog);
     console.log(result);
     //setBlog([...blog, result]);
