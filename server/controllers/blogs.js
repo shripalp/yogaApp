@@ -19,11 +19,9 @@ blogsRouter.get("/:id", async (request, response) => {
 
 blogsRouter.post("/", async (request, response) => {
   const body = request.body;
-  //console.log(body);
+  console.log(body);
 
-  const blog = new Blog({
-    body,
-  });
+  const blog = new Blog(body);
 
   const savedBlog = await blog.save();
 
