@@ -14,6 +14,7 @@ const Blog = (props) => {
         title={props.blog.title}
         subtitle={props.blog.author}
         text={props.blog.content}
+        img={props.blog.image}
       />
 
       {props.token ? (
