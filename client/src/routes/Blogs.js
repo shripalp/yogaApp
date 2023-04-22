@@ -19,15 +19,13 @@ function Blogs(props) {
           <Header token={props.token} />
         </Col>
       </Row>
-      <Row>
+      <Row className="mt-5">
         <Col xs={12} sm={12} md={6} lg={4}>
           {props.token ? <BlogForm /> : null}
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col lg={4}>
-          <BlogsList token={props.token} />
-        </Col>
+      <Row className="mt-5">
+        <BlogsList token={props.token} />
       </Row>
 
       <Row>

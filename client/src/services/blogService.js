@@ -20,11 +20,17 @@ const remove = (id) => {
   return axios.delete(`${baseUrl}/${id}`);
 };
 
+const getOne = (id) => {
+  const request = axios.get(`${baseUrl}/${id}`);
+  return request.then((response) => response.data);
+};
+
 const blogService = {
   getAll: getAll,
   create: create,
   update: update,
   remove: remove,
+  getOne: getOne,
 };
 
 export default blogService;
