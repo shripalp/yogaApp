@@ -5,31 +5,19 @@ import blogService from "../services/blogService";
 import FileBase64 from "react-file-base64";
 
 function ClassesForm() {
-  const [title, setTitle] = React.useState("");
-  const [author, setAuthor] = React.useState("");
-  const [content, setContent] = React.useState("");
+  const [blog, setBlog] = React.useState({
+    title: "",
+    author: "",
+    content: "",
+    image: "",
+  });
 
   const handleSubmit = async (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
-
-    const blog = {
-      title: title,
-      author: author,
-      content: content,
-    };
-    blogService
-      .create(blog)
-      .then((result) => {
-        console.log("Success", result);
-        setTitle("");
-        setAuthor("");
-        setContent("");
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    const result = await blogService.create(blog);
+    setBlog([...blog, result]);
   };
 
   return (
@@ -42,7 +30,6 @@ function ClassesForm() {
           <Form.Control
             type="text"
             name="title"
-            value={title}
             onChange={(e) => setBlog({ ...blog, title: e.target.value })}
             placeholder="Enter Blog title"
           />
@@ -62,7 +49,6 @@ function ClassesForm() {
             as="textarea"
             rows="5"
             name="content"
-            value={content}
             onChange={(e) => setBlog({ ...blog, content: e.target.value })}
             placeholder="Enter contnet"
           />
@@ -71,7 +57,8 @@ function ClassesForm() {
           <Form.Label>Upload Image</Form.Label>
           <FileBase64
             multiple={false}
-            onDone={({ base64 }) => setImage(base64)}
+            type="file"
+            onDone={({ base64 }) => setBlog({ ...blog, image: base64 })}
             placeholder="Enter contnet"
           />
         </Form.Group>
