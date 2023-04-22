@@ -20,7 +20,7 @@ const Blog = (props) => {
         height="18rem"
         color="light"
         link="takeme"
-        url="/blog"
+        url="/contact"
       />
 
       {props.token ? (
