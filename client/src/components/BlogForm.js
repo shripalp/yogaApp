@@ -4,31 +4,20 @@ import Button from "react-bootstrap/Button";
 import blogService from "../services/blogService";
 
 function ClassesForm() {
-  const [title, setTitle] = React.useState("");
-  const [author, setAuthor] = React.useState("");
-  const [content, setContent] = React.useState("");
+  const [blog, setBlog] = React.useState({
+    title: "",
+    author: "",
+    content: "",
+    image: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
     // set configurations
 
-    const blog = {
-      title: title,
-      author: author,
-      content: content,
-    };
-    blogService
-      .create(blog)
-      .then((result) => {
-        console.log("Success", result);
-        setTitle("");
-        setAuthor("");
-        setContent("");
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    const result = await blogService.create(blog);
+    setBlog([...blog, result]);
   };
 
   return (
@@ -42,7 +31,7 @@ function ClassesForm() {
             type="text"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setBlog({ ...blog, title: e.target.value })}
             placeholder="Enter Blog title"
           />
         </Form.Group>
@@ -51,9 +40,8 @@ function ClassesForm() {
           <Form.Control
             type="text"
             name="author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Enter Authors Name"
+            onChange={(e) => setBlog({ ...blog, author: e.target.value })}
+            placeholder="Enter Blog title"
           />
         </Form.Group>
         <Form.Group controlId="formBasicContent">
@@ -63,7 +51,7 @@ function ClassesForm() {
             rows="5"
             name="content"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={(e) => setBlog({ ...blog, content: e.target.value })}
             placeholder="Enter contnet"
           />
         </Form.Group>

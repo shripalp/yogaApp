@@ -22,9 +22,7 @@ blogsRouter.post("/", async (request, response) => {
   //console.log(body);
 
   const blog = new Blog({
-    title: body.title,
-    author: body.author,
-    content: body.content,
+    body,
   });
 
   const savedBlog = await blog.save();
