@@ -24,8 +24,8 @@ function Blogs(props) {
           {props.token ? <BlogForm /> : null}
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="justify-content-center">
+        <Col lg={4}>
           <BlogsList token={props.token} />
         </Col>
       </Row>
