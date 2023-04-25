@@ -45,6 +45,15 @@ function ClassesForm() {
             placeholder="Enter Blog title"
           />
         </Form.Group>
+        <Form.Group controlId="formBasicAuthor">
+          <Form.Label>Url</Form.Label>
+          <Form.Control
+            type="url"
+            name="url"
+            onChange={(e) => setBlog({ ...blog, url: e.target.value })}
+            placeholder="Enter Blog title"
+          />
+        </Form.Group>
         <Form.Group controlId="formBasicContent">
           <Form.Label>Content</Form.Label>
           <Form.Control

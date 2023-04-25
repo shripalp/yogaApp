@@ -6,6 +6,7 @@ const blogSchema = new mongoose.Schema(
     author: { type: String },
     content: { type: String },
     image: { type: String },
+    url: { type: String },
   },
   { timestamps: true }
 );

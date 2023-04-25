@@ -52,6 +52,7 @@ const BlogCard = (props) => {
           src={props.blog.image}
           style={styles.cardImage}
         />
+        <Card.Img variant="top" src={props.blog.url} style={styles.cardImage} />
         <Card.Body>
           <Card.Title>{props.blog.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

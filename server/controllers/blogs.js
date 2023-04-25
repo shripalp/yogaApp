@@ -39,8 +39,9 @@ blogsRouter.put("/:id", (request, response, next) => {
   const blog = {
     title: body.title,
     author: body.author,
-
+    image: body.image,
     content: body.content,
+    url: body.url,
   };
 
   Blog.findByIdAndUpdate(request.params.id, blog, { new: true })
