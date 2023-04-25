@@ -1,5 +1,5 @@
 import React from "react";
-import Blog from "./Blog";
+import BlogCard from "./BlogCard";
 import blogService from "../services/blogService";
 
 function BlogsList(props) {
@@ -16,7 +16,7 @@ function BlogsList(props) {
     <>
       {" "}
       {blogs.map((blog) => (
-        <Blog key={blog._id} blog={blog} token={props.token} />
+        <BlogCard key={blog._id} blog={blog} token={props.token} />
       ))}
     </>
   );

@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 //import { Image } from "react-bootstrap";
-
+import Card from "react-bootstrap/Card";
 //import PDF from "../components/PDF2";
 //import Image from "react-bootstrap/Image";
-import CustomCard from "../components/CustomCard";
+//import CustomCard from "../components/CustomCard";
 
 import { Container, Col, Row } from "react-bootstrap";
 
@@ -31,7 +31,18 @@ function About(props) {
       </Row>
       <Row className="mt-5 d-flex flex-wrap">
         <Col lg={4} md={6}>
-          <CustomCard {...shripalInfo} />
+          <Card className="m-1" bg="light">
+            <Card.Img variant="top" src={shripalInfo.img} />
+            <Card.Body>
+              <Card.Title>{shripalInfo.title}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                {shripalInfo.subtitle}
+              </Card.Subtitle>
+              <Card.Text>{shripalInfo.text}</Card.Text>
+
+              <Card.Link href={shripalInfo.url}>{shripalInfo.link}</Card.Link>
+            </Card.Body>
+          </Card>
         </Col>
         {/* <Col>
           <PDF

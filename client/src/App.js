@@ -5,6 +5,7 @@ import Schedule from "./routes/Schedule";
 import Blogs from "./routes/Blogs";
 import Contact from "./routes/Contact";
 import Login from "./routes/Login";
+import Blog from "./routes/Blog";
 
 //import Protected from "./components/Protected";
 import { Route, Routes } from "react-router-dom";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/blogs" element={<Blogs token={token} />} />
         <Route path="/contact" element={<Contact token={token} />} />
         <Route path="/login" element={<Login token={token} />} />
+        <Route path="/blog" element={<Blog token={token} />} />
       </Routes>
     </>
   );
