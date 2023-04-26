@@ -31,6 +31,7 @@ const BlogCard = (props) => {
         author: props.blog.author,
         image: props.blog.image,
         content: props.blog.content,
+        createdAt: props.blog.createdAt,
       },
     });
   };
