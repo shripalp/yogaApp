@@ -3,14 +3,18 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import blogService from "../services/blogService";
 import FileBase64 from "react-file-base64";
+import Alert from "react-bootstrap/Alert";
 
-function ClassesForm() {
+function BlogForm() {
   const [blog, setBlog] = React.useState({
     title: "",
     author: "",
     content: "",
+    url: "",
     image: "",
   });
+
+  const [visible, setVisible] = React.useState(false);
 
   const handleSubmit = async (e) => {
     // prevent the form from refreshing the whole page
@@ -18,12 +22,26 @@ function ClassesForm() {
     // set configurations
 
     const result = await blogService.create(blog);
+    setVisible(true);
+    const emptyBlog = {
+      title: "",
+      author: "",
+      url: "",
+      content: "",
+      image: "",
+    };
+    setBlog(emptyBlog);
+    setTimeout(() => {
+      setVisible(false);
+    }, 3000);
+
     console.log(result);
     //setBlog([...blog, result]);
   };
 
   return (
     <>
+      {visible ? <Alert variant="primary">Submitted</Alert> : null}
       <h2>Enter A Blog</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
@@ -64,13 +82,12 @@ function ClassesForm() {
             placeholder="Enter contnet"
           />
         </Form.Group>
-        <Form.Group controlId="formBasicImage">
-          <Form.Label>Upload Image</Form.Label>
+        <Form.Group className="mt-3" controlId="formBasicImage">
+          <Form.Label>Upload Image:</Form.Label>
           <FileBase64
             multiple={false}
             type="file"
             onDone={({ base64 }) => setBlog({ ...blog, image: base64 })}
-            placeholder="Enter contnet"
           />
         </Form.Group>
 
@@ -87,4 +104,4 @@ function ClassesForm() {
   );
 }
 
-export default ClassesForm;
+export default BlogForm;

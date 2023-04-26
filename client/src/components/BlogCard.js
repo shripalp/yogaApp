@@ -10,22 +10,12 @@ const BlogCard = (props) => {
   const styles = {
     card: {
       backgroundColor: "#B7E0F2",
-      borderRadius: 55,
-      padding: "3rem",
-      width: props.width,
-      height: props.height,
+      borderRadius: 30,
+      padding: "2rem",
     },
-    cardImage: {
-      objectFit: "contain",
-      width: "15rem",
-      height: "6rem",
-      borderRadius: 5,
-      padding: "1rem",
-    },
+
     cardText: {
       objectFit: "contain",
-      height: "4rem",
-      width: "5rem",
     },
   };
 
@@ -52,7 +42,7 @@ const BlogCard = (props) => {
           src={props.blog.image}
           style={styles.cardImage}
         />
-        <Card.Img variant="top" src={props.blog.url} style={styles.cardImage} />
+        <Card.Img className="img-fluid" variant="top" src={props.blog.url} />
         <Card.Body>
           <Card.Title>{props.blog.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
