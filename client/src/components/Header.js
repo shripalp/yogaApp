@@ -32,13 +32,13 @@ function Header(props) {
         >
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
-            <Nav.Link href="/blogs">Blogs</Nav.Link>
-            <Nav.Link href="/schedule">Schedule</Nav.Link>
+            <Nav.Link href="/about">AboutMe</Nav.Link>
 
+            <Nav.Link href="/blogs">Class_Info</Nav.Link>
+            <Nav.Link href="/schedule">Schedule</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/login">
-              {props.token ? <>{user}</> : "Login"}
+              {props.token ? <>{user}</> : "Admin"}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
