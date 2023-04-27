@@ -7,6 +7,8 @@ import { Container, Col, Row, Button } from "react-bootstrap";
 
 function Blog(props) {
   const location = useLocation();
+  const image1 = location.state.image;
+  const image2 = location.state.url;
   return (
     <Container fluid>
       <Row>
@@ -18,21 +20,19 @@ function Blog(props) {
         <Col xs={12} s={6} md={6} ld={4}>
           <h1>{location.state.title}</h1>
           <h2> by: {location.state.author}</h2>
-          <Image
-            className="img-fluid"
-            src={location.state.image}
-            alt="blog-image"
-          />
-          <Image
-            className="img-fluid"
-            src={location.state.url}
-            alt="blog-image"
-          />
+
+          {image1 ? (
+            <Image className="img-fluid" src={image1} alt="blog-image" />
+          ) : null}
+
+          {image2 ? (
+            <Image className="img-fluid" src={image2} alt="blog-image" />
+          ) : null}
 
           <p>{location.state.content}</p>
           <Link to="/blogs">
             <Button variant="primary" size="lg">
-              Back to Blogs
+              Back to Classes
             </Button>
           </Link>
         </Col>
