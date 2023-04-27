@@ -31,7 +31,7 @@ const BlogCard = (props) => {
         author: props.blog.author,
         image: props.blog.image,
         content: props.blog.content,
-        createdAt: props.blog.createdAt,
+        url: props.blog.url,
       },
     });
   };
@@ -43,17 +43,16 @@ const BlogCard = (props) => {
           src={props.blog.image}
           style={styles.cardImage}
         />
-        <Card.Img className="img-fluid" variant="top" src={props.blog.url} />
+
         <Card.Body>
           <Card.Title>{props.blog.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            {props.blog.author}
+            by: {props.blog.author} <br></br>Created: {props.blog.createdAt}
           </Card.Subtitle>
-          <Card.Text style={styles.cardText}>{props.blog.content}</Card.Text>
+
           <Button onClick={handleClick} variant="primary">
-            Go somewhere
+            Click for More Details
           </Button>
-          <Card.Link href="/contact">contact me</Card.Link>
         </Card.Body>
       </Card>
       {props.token ? (
